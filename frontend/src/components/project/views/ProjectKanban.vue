@@ -902,6 +902,12 @@ $filter-container-height: '1rem - #{$switch-view-height}';
 		list-style: none;
 	}
 
+	// Fill the board so the empty space below short buckets is still a drop target
+	// for sortable, which is what auto-scrolls the board while dragging.
+	> .kanban-bucket-container {
+		block-size: 100%;
+	}
+
 	.ghost {
 		position: relative;
 

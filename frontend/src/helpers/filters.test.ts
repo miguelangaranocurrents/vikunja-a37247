@@ -594,5 +594,10 @@ describe('hasFilterQuery', () => {
 	it('returns a boolean for a filter expression', () => {
 		expect(hasFilterQuery('done = false')).toBe(true)
 		expect(hasFilterQuery('hello')).toBe(false)
+		})
+
+		it('does not mistake words containing an operator for a filter', () => {
+			expect(hasFilterQuery('meeting')).toBe(false)
+			expect(hasFilterQuery('likelihood')).toBe(false)
 	})
 })
